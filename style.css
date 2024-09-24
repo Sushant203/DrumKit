@@ -1,0 +1,102 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background: #000 url(drum.avif) no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.keys {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    min-height: 100vh;
+}
+
+.key {
+    border: .4rem solid white;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0.8rem 0.5rem; /* Default padding */
+    transition: transform 0.1s ease;
+    width: 6rem;
+    text-shadow: 0 0 .5rem black;
+    background: rgba(0, 0, 0, 0.4);
+    flex: 1 1 calc(25% - 2rem); /* 4-column layout */
+}
+
+kbd {
+    display: block;
+    font-size: 4rem;
+}
+
+.playing {
+    transform: scale(1.1);
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600;
+}
+
+.sound {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: #ffc600;
+}
+
+/* Media Queries */
+
+/* For larger screens (desktop) */
+@media (min-width: 1024px) {
+    .key {
+        padding: 0.5rem 0.3rem;  /* Reduce padding for larger screens */
+    }
+}
+
+/* For tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    .key {
+        width: 8rem;
+        flex: 1 1 calc(33.33% - 2rem); /* 3-column layout */
+        font-size: 1.3rem;
+        padding: 0.7rem 0.4rem;  /* Slightly reduced padding */
+    }
+
+    kbd {
+        font-size: 3rem;
+    }
+
+    .sound {
+        font-size: 1rem;
+    }
+}
+
+/* For mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .keys {
+        gap: 10px; /* Reduce gap between keys */
+    }
+
+    .key {
+        width: 6rem;
+        flex: 1 1 calc(50% - 1rem); /* 2-column layout */
+        font-size: 1.1rem;
+        padding: 0.6rem 0.3rem; /* Reduced padding */
+    }
+
+    kbd {
+        font-size: 2.5rem;
+    }
+
+    .sound {
+        font-size: 0.9rem;
+    }
+}
